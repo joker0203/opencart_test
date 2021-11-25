@@ -58,7 +58,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-description{{ language.language_id }}">Альтернативное название</label>
                         <div class="col-sm-10">
-                          <textarea name="product_description[{{ language.language_id }}][alternative-name]" placeholder="{{ entry_description }}" id="input-alternative-name{{ language.language_id }}" data-toggle="summernote" data-lang="{{ summernote }}" class="form-control">{{ product_alternative-name[language.language_id] ? product_description[language.language_id].alternative-name }}</textarea>
+                          <textarea name="product_description[{{ language.language_id }}][alternative]" placeholder="{{ entry_description }}" id="input-alternative{{ language.language_id }}" data-toggle="summernote" data-lang="{{ summernote }}" class="form-control">{{ product_alternative[language.language_id] ? product_description[language.language_id].alternative }}</textarea>
                         </div>
                       </div>
                     <hr>
