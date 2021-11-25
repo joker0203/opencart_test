@@ -593,12 +593,12 @@ class ControllerCatalogProduct extends Controller {
 			$data['product_description'] = array();
 		}
 
-        if (isset($this->request->post['product_alternative-name'])) {
-            $data['product_alternative-name'] = $this->request->post['product_alternative-name'];
+        if (isset($this->request->post['product_alternative'])) {
+            $data['product_alternative'] = $this->request->post['product_alternative'];
         } elseif (isset($this->request->get['product_id'])) {
-            $data['product_alternative-name'] = $this->model_catalog_product->getProductDescriptions($this->request->get['product_id']);
+            $data['product_alternative'] = $this->model_catalog_product->getProductDescriptions($this->request->get['product_id']);
         } else {
-            $data['product_alternative-name'] = array();
+            $data['product_alternative'] = array();
         }
 
 		if (isset($this->request->post['model'])) {
