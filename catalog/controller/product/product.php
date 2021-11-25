@@ -241,7 +241,7 @@ class ControllerProductProduct extends Controller {
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
-
+            $data['alternative'] = html_entity_decode($product_info['alternative'], ENT_QUOTES, 'UTF-8');
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
 			} elseif ($this->config->get('config_stock_display')) {
@@ -412,7 +412,8 @@ class ControllerProductProduct extends Controller {
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
 					'name'        => $result['name'],
-					'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+                    'alternative' => html_entity_decode($result['alternative']),
+                    'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
 					'special'     => $special,
 					'tax'         => $tax,
